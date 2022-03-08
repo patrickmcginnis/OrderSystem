@@ -1,0 +1,18 @@
+html(lang="en")
+head 
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Order Form
+    link(rel="stylesheet", href="css/styles.css")
+    script(src="js/orderform.js" defer)
+body(onload="init()") 
+    include ./partials/header
+    br
+    br
+    select#restaurant-select
+    div(id='info')
+    div(id='main')
+        div(class="column left", id="left")
+        div(class="column middle", id="middle")
+        div(class="column right", id="right")

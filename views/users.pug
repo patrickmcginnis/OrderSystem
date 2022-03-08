@@ -1,0 +1,15 @@
+html 
+    head 
+        link(rel="stylesheet", href="../css/styles.css")
+        title Users 
+body 
+    include partials/header 
+
+    div#main
+        h1 Welcome to the Users Page 
+        p Browse the users: 
+
+        each user in users
+            if !user.privacy || user._id == session._id 
+                a(href=`/users/${user._id}`) #{user.username}
+                br

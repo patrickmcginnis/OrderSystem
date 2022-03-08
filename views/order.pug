@@ -1,0 +1,25 @@
+html 
+    head 
+        link(rel="stylesheet" href="../css/styles.css")
+        title Order 
+body 
+    include partials/header
+
+    div#main 
+        if session.loggedin 
+            h1 Welcome to the Order Page 
+            p Order Details: 
+            ul
+                li Restaurant Name: #{order.restaurantName}
+                li Customer: #{order.customer}
+                li Subtotal: #{order.subtotal}
+                li total: #{order.total}
+                li fee: #{order.fee}
+                li tax: #{order.tax}
+            ul 
+            p Items Ordered:
+            ul 
+                each item in order.order
+                    li #{item.name} x #{item.quantity}
+        else 
+            h1 Login to view this order!

@@ -1,0 +1,26 @@
+html
+	head
+		link(rel="stylesheet", href="css/styles.css")
+		title Home Page
+body
+	include partials/header
+
+	div#main
+		h1 Welcome to the Restaurants Ordering System
+		if !session.loggedin
+			p Please log in!
+			form(action="/login" method="post")
+				label Name 
+				input(type="text" name="username" required="required")
+				br
+				label Pass 
+				input(type="password" name="password" required="required")
+				br
+				br
+				button(type="submit") Login
+		else 
+			p You are currently logged in as #{session.username}
+			br
+			p Go order some FooD!
+			
+	include partials/footer

@@ -1,0 +1,19 @@
+div#header
+	if session.loggedin
+		a(href="/") Home
+		| 
+		a(href="/users") Users
+		| 
+		a(href="/orderform") Order Food
+		| 
+		a(href=`/users/${session._id}`) Profile
+		| 
+		a(href="/logout")    Logout
+		| 
+	else 
+		a(href="/") Home
+		| 
+		a(href="/users") Users
+		|  
+		a(href="/register") Register
+		|

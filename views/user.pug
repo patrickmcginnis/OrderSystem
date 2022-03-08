@@ -1,0 +1,30 @@
+html 
+    head 
+        link(rel="stylesheet", href="../css/styles.css")
+        title User 
+body 
+    include partials/header 
+
+    div#main
+        if session._id == user._id
+            h1 Welcome to YOUR Page #{user.username}!
+            p PRiVACY SETTINGS:
+            form(action=`/users/${session._id}` method="post")
+                label Public 
+                input(type="radio" id="public" name="privacy" value="0")
+                |
+                |
+                label Private 
+                input(type="radio" id="private" name="privacy" value="1")
+                br
+                br
+                button(type="submit") Submit
+        else 
+            h1 Welcome to #{user.username}'s Page!
+
+
+        p Browse their purchase history: 
+
+        each order in user.orders 
+            a(href=`/orders/${order._id}`) #{order._id}
+            br
